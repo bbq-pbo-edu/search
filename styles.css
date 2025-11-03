@@ -14,6 +14,8 @@
     --color-footer-bg: #f2f2f2;
     --color-footer-border: #dbdce0;
 
+    --color-image-text: #4285f4;
+
 }
 
 /* Basic resets */
@@ -64,9 +66,22 @@ main {
     width: 100%;
 }
 
+.title {
+    position: relative;
+}
+
 .title svg {
     width: calc(200px * 1.5);
     height: calc(50px * 1.5);
+}
+
+.title::before {
+    position: absolute;
+    content: "images";
+    z-index: 10;
+    top: -2px;
+    right: 56px;
+    color: var(--color-image-text);
 }
 
 form {
