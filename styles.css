@@ -1,0 +1,144 @@
+/* Custom CSS properties */
+:root {
+    --color-button-bg: #f8f9fa;
+    --color-button-fg: #3d4043;
+    --color-button-border-hover: #dadce0;
+    --color-button-border-active: #5c85f5;
+
+    --color-icon-fill: #474747;
+    --color-search-border: #dadce0;
+    --color-font-link: #212121;
+
+    --color-body-bg: #ffffff;
+    --color-header-bg: #ffffff;
+    --color-footer-bg: #f2f2f2;
+    --color-footer-border: #dbdce0;
+
+}
+
+/* Basic resets */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.app-container {
+    display: grid;
+    grid-template-rows: 1fr 20fr 1fr;
+    place-items: center;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1.5rem 1.5rem 0 0;
+
+    width: 100%;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--color-font-link);
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.title svg {
+    width: calc(200px * 1.5);
+    height: calc(50px * 1.5);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.search-input {
+    font-family: inherit;
+    font-size: 1rem;
+    border: 1px solid var(--color-search-border);
+    width: 700px;
+    border-radius: 24px;
+    height: 34px;
+    padding: 1.5rem 2.5rem;
+
+    box-shadow: 0 3px 10px 1px rgba(0.2, 0.2, 0.2, 0.1);
+}
+
+.search-input:hover,
+.search-input:focus {
+    outline: none;
+    box-shadow: 0 3px 10px 1px rgba(0.2, 0.2, 0.2, 0.25);
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-container::before {
+    position: absolute;
+    content: '';
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12px;
+    background-image: url(./magnifying_glass.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+input[type=submit] {
+    outline: none;
+    background-color: var(--color-button-bg);
+    border: 1px solid var(--color-button-bg);
+    border-radius: 6px;
+    width: fit-content;
+    align-self: center;
+
+    padding: .5rem .75rem;
+}
+
+input[type=submit]:hover {
+    border: 1px solid var(--color-button-border-hover);
+    box-shadow: 0 1px 0 0 var(--color-button-border-hover);
+    cursor: pointer;
+}
+
+input[type=submit]:active,
+input[type=submit]:focus {
+    border: 1px solid var(--color-button-border-active);
+}
+
+footer {
+    background-color: var(--color-footer-bg);
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+    padding: 1rem;
+
+    border-top: 1px solid var(--color-footer-border);
+}
